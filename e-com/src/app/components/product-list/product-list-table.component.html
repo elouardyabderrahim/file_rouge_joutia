@@ -1,0 +1,22 @@
+<table>
+  <thead>
+    <tr>
+      <th>image</th>
+      <th>Name</th>
+      <th>Price</th>
+      <th>description</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let temProduct of products">
+      <td class="align-middle">
+        <img src="/e-com/product/unknown.png" height="50" />
+      </td>
+
+      <td class="align-middle">{{ temProduct.name }}</td>
+      <td class="align-middle">{{ temProduct.currentPrice }}</td>
+      <td class="align-middle">{{ temProduct.description }}</td>
+    </tr>
+  </tbody>
+</table>

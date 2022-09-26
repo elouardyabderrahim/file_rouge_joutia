@@ -1,0 +1,25 @@
+<!-- MAIN CONTENT-->
+
+<div class="main-content">
+  <div class="section-content section-content-p30">
+    <div class="container-fluid">
+      <div class="row">
+        <!-- loop over the collection of products -->
+        <div *ngFor="let temProduct of products" class="col-md-3">
+          <div class="product-box">
+            <img
+              src="{{ 'http://localhost:8080/photoProduct/' + temProduct.id }}"
+              class="img-responsive"
+            />
+            <h1>{{ temProduct.name }}</h1>
+            <h2>{{ temProduct.description }}</h2>
+            <div class="price">
+              {{ temProduct.currentPrice | currency: "USD" }}
+            </div>
+            <a href="#" class="primary-btn">Add to cart</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
