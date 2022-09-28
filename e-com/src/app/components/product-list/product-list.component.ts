@@ -69,7 +69,7 @@ export class ProductListComponent implements OnInit {
   styleUrls: ['./product-list.component.css'],
 })
 export class ProductListComponent implements OnInit {
-  'products': Products[];
+  products: any = [];
   'currentCategoryId': number;
 
   constructor(
@@ -78,9 +78,20 @@ export class ProductListComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.route.paramMap.subscribe(() => {
-      this.listProducts();
+    this.productService.getProducts().subscribe((data) => {
+      this.products = data;
     });
+    // fetch('http://localhost:8080/api/products')
+    //   .then((response) => response.json())
+    //   .then((data) => {
+    //     console.log(data);
+    //     this.products = data;
+    //   })
+    //   .catch((err) => console.error(err));
+
+    //    this.route.paramMap.subscribe(() => {
+    //    this.listProducts();
+    //});
   }
 
   listProducts() {

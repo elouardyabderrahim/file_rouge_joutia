@@ -1,21 +1,12 @@
 <div class="menu-sidebar-content js-scrollbar1">
   <nav class="navbar-sidebar">
     <ul class="list-unstyled navbar-list">
-      <li>
-        <a routerLink="/category/1" routerLinkActive="active-link"
-          >computers
+      <li *ngFor="let category of categories">
+        <a
+          [routerLink]="'/category/' + category.id"
+          routerLinkActive="active-link"
+          >{{ category.name }}
         </a>
-      </li>
-      <li>
-        <a routerLink="/category/2" routerLinkActive="active-link">printers</a>
-      </li>
-      <li>
-        <a routerLink="/category/3" routerLinkActive="active-link"
-          >Smart phones</a
-        >
-      </li>
-      <li>
-        <a routerLink="/category/4" routerLinkActive="active-link">clothes</a>
       </li>
     </ul>
   </nav>
